@@ -1,0 +1,17 @@
+Project Title: PerthCleaner - Custom Cleaning Services Website
+
+Project Overview:
+PerthCleaner is a responsive, custom-built web application designed for a premium cleaning service based in Perth, Australia. The goal of the project was to create a modern, user-friendly, and highly professional online presence that builds trust and drives customer inquiries. The platform allows users to explore cleaning services (home, deep, end-of-lease, and office cleaning), learn about the company, and seamlessly request personalized quotes. 
+
+Key Features:
+* Custom UI/UX Design: A modern, clean, and refreshing interface tailored to the brand’s identity ("A little cleaner. A lot more living."), featuring dynamic animations and a responsive layout for all devices.
+* Dynamic Sections: Modular home page featuring hero sections, service breakdowns, benefits, "how it works", and an FAQ section to maximize user engagement.
+* Lead Generation Form: A built-in, secure contact and quote request system that routes inquiries directly to the business. 
+* Accessibility & SEO Optimized: Semantic HTML structure, fast loading speeds, and on-page SEO best practices implemented to ensure high visibility and accessibility.
+
+Technologies Used:
+* Frontend: HTML5, CSS3 (Vanilla custom styling, CSS variables), JavaScript.
+* Backend: PHP (Modular architecture using includes/components for maintainability).
+* Typography & Icons: Google Fonts (DM Sans, Manrope, Nunito) and inline SVG iconography for a premium look.
+
+Role: Full-Stack Developer & UI Engineer

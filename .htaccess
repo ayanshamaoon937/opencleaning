@@ -1,0 +1,6 @@
+DirectoryIndex index.php
+RewriteEngine On
+RewriteRule ^(index|about|contact)\.html$ $1.php [R=301,L]
+<FilesMatch "^(config|bootstrap)\.php$">
+Require all denied
+</FilesMatch>
