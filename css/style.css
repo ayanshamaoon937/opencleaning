@@ -136,9 +136,8 @@ section {
     white-space: nowrap;
 }
 .brand-logo img {
-    width: 182px;
+    max-width: 150px;
     height: auto;
-    max-height: 82px;
     object-fit: contain;
 }
 .brand-light {
