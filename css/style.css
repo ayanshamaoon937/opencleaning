@@ -1534,8 +1534,9 @@ button:disabled {
     }
     .footer-bottom {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 10px;
+        padding-bottom: 3rem !important;
     }
     .page-hero h1 {
         font-size: 44px;
