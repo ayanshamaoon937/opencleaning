@@ -209,6 +209,34 @@ nav a[aria-current]:after {
 .text-link:hover {
     color: #008fc4;
 }
+.outline-button {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 15px 20px;
+    border: 1px solid var(--green);
+    border-radius: 7px;
+    color: var(--green);
+    transition: color 0.28s ease, border-color 0.28s ease;
+}
+.outline-button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: var(--green);
+    transform: translateX(-101%);
+    transition: transform 0.32s cubic-bezier(.2,.8,.2,1);
+}
+.outline-button:hover,
+.outline-button:focus-visible {
+    color: #fff;
+    border-color: var(--green);
+}
+.outline-button:hover:before,
+.outline-button:focus-visible:before {
+    transform: translateX(0);
+}
 .menu-toggle {
     display: none;
 }
@@ -792,6 +820,18 @@ footer {
 }
 .page-hero p {
     margin: 0;
+}
+.thank-you-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.thank-you-page .page-hero {
+    width: 100%;
+}
+.thank-you-page p {
+    max-width: 570px;
+    margin-bottom: 28px;
 }
 .compact {
     padding: 52px 0;

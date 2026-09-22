@@ -94,19 +94,19 @@ require __DIR__ . "/includes/header.php";
             <span class="eyebrow">REQUEST A CLEANING QUOTE</span>
             <h2>Tell us about your space</h2>
             <p>Fields marked * are required. We’ll reply using the details you provide.</p>
-            <?php if (
-                $flash
-            ): ?>
-            <div class="notice <?= e($flash["type"]) ?>" role="<?= $flash["type"] === "success" ? "status" : "alert" ?>">
-                <?= e($flash["message"]) ?>
-            </div>
-            <?php endif; ?>
-            <form action="send-mail.php" method="post" id="quoteForm">
-                <input type="hidden" name="csrf" value="<?= e($_SESSION["csrf"]) ?>" />
+            <form
+                name="open-cleaning-quote"
+                method="POST"
+                action="/thank-you.html"
+                id="quoteForm"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+            >
+                <input type="hidden" name="form-name" value="open-cleaning-quote" />
                 <div class="honey" aria-hidden="true">
                     <label>
                         Leave this empty
-                        <input name="website" tabindex="-1" autocomplete="off" />
+                        <input name="bot-field" tabindex="-1" autocomplete="off" />
                     </label>
                 </div>
                 <div class="form-row">
@@ -118,7 +118,6 @@ require __DIR__ . "/includes/header.php";
                             maxlength="100"
                             autocomplete="name"
                             placeholder="Alex Smith"
-                            value="<?= e($old["name"] ?? "") ?>"
                         />
                     </label>
                     <label>
@@ -130,7 +129,6 @@ require __DIR__ . "/includes/header.php";
                             maxlength="254"
                             autocomplete="email"
                             placeholder="alex@example.com"
-                            value="<?= e($old["email"] ?? "") ?>"
                         />
                     </label>
                 </div>
@@ -144,7 +142,6 @@ require __DIR__ . "/includes/header.php";
                             maxlength="30"
                             autocomplete="tel"
                             placeholder="Your best contact number"
-                            value="<?= e($old["phone"] ?? "") ?>"
                         />
                     </label>
                     <label>
@@ -155,7 +152,6 @@ require __DIR__ . "/includes/header.php";
                             maxlength="100"
                             autocomplete="address-level2"
                             placeholder="e.g. Subiaco, 6008"
-                            value="<?= e($old["suburb"] ?? "") ?>"
                         />
                     </label>
                 </div>
@@ -168,7 +164,7 @@ require __DIR__ . "/includes/header.php";
                                 $services
                                 as $s
                             ): ?>
-                            <option <?= $selected === $s ? "selected" : "" ?>><?= e($s) ?></option>
+                            <option><?= e($s) ?></option>
                             <?php endforeach; ?>
                         </select>
                     </label>
@@ -179,7 +175,7 @@ require __DIR__ . "/includes/header.php";
                                 ["One-off", "Weekly", "Fortnightly", "Monthly", "Not sure yet"]
                                 as $s
                             ): ?>
-                            <option <?= ($old["frequency"] ?? "") === $s ? "selected" : "" ?>><?= $s ?></option>
+                            <option><?= $s ?></option>
                             <?php endforeach; ?>
                         </select>
                     </label>
@@ -194,8 +190,7 @@ require __DIR__ . "/includes/header.php";
                         rows="4"
                         placeholder="Tell us if it is a home or commercial space, the rooms or areas to clean, and your preferred timing…"
                     >
-<?= e($old["message"] ?? "") ?></textarea
-                    >
+                    </textarea>
                 </label>
                 <label class="consent">
                     <input
@@ -203,7 +198,6 @@ require __DIR__ . "/includes/header.php";
                         name="consent"
                         value="1"
                         required
-                        <?= !empty($old["consent"] ) ? "checked" : "" ?>
                     />
                     <span>
                         I agree to be contacted about my enquiry and have read the

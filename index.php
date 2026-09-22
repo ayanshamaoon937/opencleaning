@@ -32,7 +32,7 @@ require __DIR__ . "/includes/header.php";
                 <a class="btn" href="contact.php#quote">
                     Get a free quote <?= icon("arrow") ?>
                 </a>
-                <a class="text-link" href="#services">
+                <a class="text-link outline-button" href="#services">
                     Explore services
                     <span>↗</span>
                 </a>
