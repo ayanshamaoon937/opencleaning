@@ -760,6 +760,14 @@ footer {
     height: 13px;
     margin-left: 6px;
 }
+.footer-bottom > span > a {
+    color: var(--dark);
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+.footer-bottom > span > a:hover {
+    color: var(--green);
+}
 .footer-credit {
     display: flex;
     align-items: center;
