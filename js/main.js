@@ -102,14 +102,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const form = document.querySelector("#quoteForm");
     const formSuccess = document.querySelector("#formSuccess");
-    if (formSuccess && new URLSearchParams(window.location.search).get("submitted") === "true") {
-        formSuccess.hidden = false;
-        formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-    form?.addEventListener("submit", () => {
+    form?.addEventListener("submit", async (event) => {
+        event.preventDefault();
         const button = form.querySelector("button[type=submit]");
         button.disabled = true;
         button.textContent = "Sending your request…";
+
+        try {
+            const formData = new FormData(form);
+            const body = new URLSearchParams(formData).toString();
+            const response = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body,
+            });
+
+            if (!response.ok) throw new Error("Form submission failed");
+
+            form.reset();
+            formSuccess.hidden = false;
+            formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+            button.textContent = "Request sent ✓";
+        } catch (error) {
+            button.disabled = false;
+            button.textContent = "Try again";
+            alert("We couldn’t send your request. Please try again or call us directly.");
+        }
     });
     window.addEventListener("pageshow", () => {
         const button = form?.querySelector("button[type=submit]");
