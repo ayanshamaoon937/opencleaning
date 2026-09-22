@@ -1060,6 +1060,9 @@ textarea::placeholder {
     background: #dfefd9;
     color: #245c36;
 }
+.form-submission-notice {
+    margin: 15px 0 0;
+}
 .prose {
     max-width: 800px;
 }

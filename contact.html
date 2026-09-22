@@ -142,9 +142,6 @@
             <span class="eyebrow">REQUEST A CLEANING QUOTE</span>
             <h2>Tell us about your space</h2>
             <p>Fields marked * are required. We’ll reply using the details you provide.</p>
-            <div class="notice success" id="formSuccess" hidden role="status">
-                Thank you — your quote request has been sent. We’ll be in touch shortly.
-            </div>
             <form
                 name="contact"
                 method="POST"
@@ -250,6 +247,9 @@
                 </label>
                 <button class="btn" type="submit">
                     Request my quote <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>                </button>
+                <div class="notice success form-submission-notice" id="formSuccess" hidden role="status">
+                    Thank you — your quote request has been sent. We’ll be in touch shortly.
+                </div>
                 <p class="form-note">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z"/><path d="m8 12 3 3 5-6"/></svg> Your details are only used to help with your enquiry.
                 </p>
