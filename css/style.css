@@ -1162,8 +1162,8 @@ button:disabled {
         font-size: 21px;
     }
     .brand img {
-        width: 38px;
-        height: 38px;
+        max-width: 120px;
+        height: auto;
     }
     .brand small {
         font-size: 6px;
