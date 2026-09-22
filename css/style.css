@@ -1534,7 +1534,7 @@ button:disabled {
     }
     .footer-bottom {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 10px;
         padding-bottom: 3rem !important;
     }
