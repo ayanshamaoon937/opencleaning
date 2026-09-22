@@ -142,10 +142,13 @@
             <span class="eyebrow">REQUEST A CLEANING QUOTE</span>
             <h2>Tell us about your space</h2>
             <p>Fields marked * are required. We’ll reply using the details you provide.</p>
+            <div class="notice success" id="formSuccess" hidden role="status">
+                Thank you — your quote request has been sent. We’ll be in touch shortly.
+            </div>
             <form
                 name="contact"
                 method="POST"
-                action="/thank-you/"
+                action="/contact.html?submitted=true#quoteForm"
                 id="quoteForm"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"

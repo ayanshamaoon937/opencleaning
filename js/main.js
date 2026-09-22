@@ -101,6 +101,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     const form = document.querySelector("#quoteForm");
+    const formSuccess = document.querySelector("#formSuccess");
+    if (formSuccess && new URLSearchParams(window.location.search).get("submitted") === "true") {
+        formSuccess.hidden = false;
+        formSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
     form?.addEventListener("submit", () => {
         const button = form.querySelector("button[type=submit]");
         button.disabled = true;
