@@ -7,6 +7,9 @@
     --line: #d8e9ee;
     --font: "DM Sans", sans-serif;
 }
+.nl-wrap {
+    display: none !important;
+}
 * {
     box-sizing: border-box;
 }
